@@ -16,4 +16,4 @@ def sort_by_fields(items, fields):
         # Sort
         # Use a tuple of (v is not None, v) as the key, to ensure that None sorts before other values,
         # as comparing directly with None breaks on python3
-        items.sort(key=lambda x: (getattr(x, key) is not None, getattr(x, key)), reverse=reverse)
+        items.sort(key=lambda x: (getattr(x, key, None) is not None, getattr(x, key, None)), reverse=reverse)
